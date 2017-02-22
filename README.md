@@ -3,3 +3,18 @@
 [![NPM](https://nodei.co/npm/babel-plugin-angular-inline-template.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/babel-plugin-angular-inline-template/)
 
 Babel plugin for inlining templates into angular 1.X components and directives
+
+
+## How to use
+
+In `.babelrc` or similar:
+
+```json
+{
+  plugins: [
+    ['babel-plugin-angular-inline-template, {
+      basePath: '<ROOT-PATH-TO-YOUR-FILE>'
+    }]
+  ]
+}
+```

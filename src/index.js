@@ -28,8 +28,14 @@ function replaceTemplateUrlWithTemplate(node, basePath) {
 module.exports = function() {
 	return {
 		visitor: {
-			ObjectProperty(nodePath, file) {
-				replaceTemplateUrlWithTemplate(nodePath.node, 'test/fixtures');
+			ObjectProperty(nodePath, state) {
+				const basePath = state.opts.basePath;
+
+				if (!basePath) {
+					throw new Error('babel-plugin-angular-inline-template requires a base path to run');
+				}
+
+				replaceTemplateUrlWithTemplate(nodePath.node, basePath);
 			}
 		}
 	};
