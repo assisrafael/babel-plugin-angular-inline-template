@@ -7,9 +7,9 @@
     "test": "test"
   },
   "keywords": [
-      "babel-plugin",
-      "sample",
-      "example"
+    "babel-plugin",
+    "angularjs",
+    "template"
   ],
   "author": "Igor Rafael <igor.rafael@gmail.com>",
   "license": "MIT",
@@ -22,11 +22,13 @@
     "chalk": "^1.1.0",
     "clear": "0.0.1",
     "diff": "^3.2.0",
+    "standard-version": "^4.0.0",
     "watch": "^1.0.1"
   },
   "scripts": {
     "test": "node test",
     "watch": "node test --watch",
-    "prepublish": "npm test"
+    "prepublish": "npm test",
+    "release": "standard-version"
   }
 }
