@@ -18,3 +18,13 @@ In `.babelrc` or similar:
   ]
 }
 ```
+
+Or if you want to use relative templateUrl's:
+
+```json
+{
+  plugins: [
+    'babel-plugin-angular-inline-template'
+  ]
+}
+```

@@ -27,13 +27,22 @@ function runTests() {
 
 function runTest(dir) {
 	var exitCode = 0;
-	var output = babel.transformFileSync(dir.path + '/actual.js', {
-		plugins: [
-			[pluginPath, {
-				basePath: 'test/fixtures'
-			}]
-		]
-	});
+
+	if (dir.path === path.join(__dirname, 'fixtures', 'relative-path')) {
+        var output = babel.transformFileSync(dir.path + '/actual.js', {
+            plugins: [
+            	pluginPath
+            ]
+        });
+	} else {
+		var output = babel.transformFileSync(dir.path + '/actual.js', {
+			plugins: [
+				[pluginPath, {
+					basePath: 'test/fixtures'
+				}]
+			]
+		});
+	}
 
 	var expected = fs.readFileSync(dir.path + '/expected.js', 'utf-8');
 

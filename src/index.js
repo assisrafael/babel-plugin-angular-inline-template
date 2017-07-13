@@ -29,11 +29,10 @@ module.exports = function() {
 	return {
 		visitor: {
 			ObjectProperty(nodePath, state) {
-				const basePath = state.opts.basePath;
 
-				if (!basePath) {
-					throw new Error('babel-plugin-angular-inline-template requires a base path to run');
-				}
+			    // If basePath isn't specified, use the abs. file folder as base path,
+                // to have the ability to work with relative templateUrl's
+                const basePath = state.opts.basePath || state.file.opts.filename.split('/').slice(0, -1).join('/');
 
 				replaceTemplateUrlWithTemplate(nodePath.node, basePath);
 			}
