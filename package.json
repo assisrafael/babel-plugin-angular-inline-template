@@ -12,6 +12,9 @@
     "template"
   ],
   "author": "Igor Rafael <igor.rafael@gmail.com>",
+  "contributors": [
+    "Dieter Geerts <dieter@dworks.be> https://www.linkedin.com/in/dieteratwork/"
+  ],
   "license": "MIT",
   "dependencies": {
     "babel-runtime": "^6.23.0",
