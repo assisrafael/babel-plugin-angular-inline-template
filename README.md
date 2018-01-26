@@ -28,3 +28,5 @@ Or if you want to use relative templateUrl's:
   ]
 }
 ```
+
+All templates are minified using [html-minifier](https://github.com/kangax/html-minifier)
