@@ -11,9 +11,9 @@ In `.babelrc` or similar:
 
 ```json
 {
-  plugins: [
-    ['babel-plugin-angular-inline-template, {
-      basePath: '<ROOT-PATH-TO-YOUR-FILE>'
+  "plugins": [
+    ["babel-plugin-angular-inline-template", {
+      "basePath": "<ROOT-PATH-TO-YOUR-FILE>"
     }]
   ]
 }
@@ -23,8 +23,8 @@ Or if you want to use relative templateUrl's:
 
 ```json
 {
-  plugins: [
-    'babel-plugin-angular-inline-template'
+  "plugins": [
+    "babel-plugin-angular-inline-template"
   ]
 }
 ```
