@@ -30,9 +30,9 @@ module.exports = function() {
 		visitor: {
 			ObjectProperty(nodePath, state) {
 
-			    // If basePath isn't specified, use the abs. file folder as base path,
-                // to have the ability to work with relative templateUrl's
-                const basePath = state.opts.basePath || state.file.opts.filename.split('/').slice(0, -1).join('/');
+				// If basePath isn't specified, use the abs. file folder as base path,
+				// to have the ability to work with relative templateUrl's
+				const basePath = state.opts.basePath || state.file.opts.filename.split('/').slice(0, -1).join('/');
 
 				replaceTemplateUrlWithTemplate(nodePath.node, basePath);
 			}
