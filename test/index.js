@@ -1,6 +1,5 @@
 'use strict';
 
-const assert = require('assert');
 const babel = require('babel-core');
 const chalk = require('chalk');
 const clear = require('clear');
@@ -27,15 +26,16 @@ function runTests() {
 
 function runTest(dir) {
 	var exitCode = 0;
+	var output;
 
 	if (dir.path === path.join(__dirname, 'fixtures', 'relative-path')) {
-        var output = babel.transformFileSync(dir.path + '/actual.js', {
-            plugins: [
-            	pluginPath
-            ]
-        });
+		output = babel.transformFileSync(dir.path + '/actual.js', {
+			plugins: [
+				pluginPath
+			]
+		});
 	} else {
-		var output = babel.transformFileSync(dir.path + '/actual.js', {
+		output = babel.transformFileSync(dir.path + '/actual.js', {
 			plugins: [
 				[pluginPath, {
 					basePath: 'test/fixtures'
@@ -54,19 +54,19 @@ function runTest(dir) {
 	process.stdout.write('\n\n');
 
 	diff.diffLines(normalizeLines(output.code), normalizeLines(expected))
-	.forEach(function (part) {
-		var value = part.value;
-		if (part.added) {
-			value = chalk.green(part.value);
-			exitCode = 1;
-		} else if (part.removed) {
-			value = chalk.red(part.value);
-			exitCode = 1;
-		}
+		.forEach(function (part) {
+			var value = part.value;
+			if (part.added) {
+				value = chalk.green(part.value);
+				exitCode = 1;
+			} else if (part.removed) {
+				value = chalk.red(part.value);
+				exitCode = 1;
+			}
 
 
-		process.stdout.write(value);
-	});
+			process.stdout.write(value);
+		});
 
 	process.stdout.write('\n\n\n');
 

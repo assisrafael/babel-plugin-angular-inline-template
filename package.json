@@ -25,6 +25,7 @@
     "chalk": "^1.1.0",
     "clear": "0.0.1",
     "diff": "^3.2.0",
+    "eslint": "^4.16.0",
     "standard-version": "^4.0.0",
     "watch": "^1.0.1"
   },
@@ -32,6 +33,7 @@
     "test": "node test",
     "watch": "node test --watch",
     "prepublish": "npm test",
-    "release": "standard-version"
+    "release": "standard-version",
+    "lint": "eslint --fix src/ test/"
   }
 }
