@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-angular-inline-template",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Babel plugin for inlining templates into angular 1.X components and directives",
   "main": "src/index.js",
   "directories": {
