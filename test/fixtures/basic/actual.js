@@ -1,3 +1,3 @@
-angular.module('x').component('app', {
-	templateUrl: 'basic/template.html'
+angular.module("x").component("app", {
+  templateUrl: "basic/template.html"
 });

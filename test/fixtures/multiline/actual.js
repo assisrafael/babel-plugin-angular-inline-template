@@ -1,3 +1,3 @@
 angular.module("x").component("app", {
-  template: "<h1>Hello World</h1>"
+  templateUrl: "multiline/template.html"
 });
